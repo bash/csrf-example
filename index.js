@@ -33,10 +33,15 @@ app.use(route.get(
 app.use(route.get(
   '/login',
   async (ctx) => {
+    if (ctx.session.authenticated) {
+      ctx.redirect('/')
+      return
+    }
+
     ctx.session.funds = 3000
     ctx.session.authenticated = true
 
-    ctx.body = 'ok'
+    ctx.redirect('/')
   }
 ))
 
@@ -65,7 +70,7 @@ app.use(route.get(
       `${amount}$ to ${to}`
     ])
 
-    ctx.body = 'ok'
+    ctx.redirect('/')
   }
 ))
 

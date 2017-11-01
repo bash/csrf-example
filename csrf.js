@@ -8,7 +8,9 @@ if (ctx.session.csrfToken !== ctx.query['csrf-token']) {
 }
 
 
-ctx.body = file.replace('<!-- CSRF_TOKEN -->', `<input type="hidden" name="csrf-token" value="${ctx.session.csrfToken}">`)
+ctx.body = file
+    .replace('<!-- FUNDS -->', ctx.session.funds || 0)
+    .replace('<!-- CSRF_TOKEN -->', `<input type="hidden" name="csrf-token" value="${ctx.session.csrfToken}">`)
 
 
 app.use((ctx, next) => {
