@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    
-    <!--
-    <link rel="preload" href="http://localhost:8080/preload" as="fetch" />
-    -->
+    <title>Super Duper Save Bank</title>
 </head>
+
 <body>
     <h1>Test Test Test</h1>
 
-    <!--
-    <img src="http://localhost:8080/image" />
-    -->
+    <a href="/login">Login</a>
+    <a href="/status">Status</a>
 
-    <!--
-    solution (how to embed images added by users):
-    <img src="http://localhost:8080/image" crossorigin />
-    -->
-    
+    <form action="/transfer">
+        <h2>Transfer Money</h2>
+        <label>
+            Amount
+            <input type="number" name="amount" placeholder="Amount" required />
+        </label>
 
-    <!--
-    <form action="http://localhost:8080/form" method="POST" id="form">
-        <script>document.querySelector('#form').submit()</script>    
+        <label>
+            To
+            <input type="text" name="to" placeholder="To" required />
+        </label>
+
+        <button type="submit">Transfer</button>
     </form>
-    -->
-
-    <!--
-    <script src="http://localhost:8080/preload"></script>
-    -->
-
-    <script>
-        // fetch('http://localhost:8080/fetch', { credentials: 'include', method: 'POST' })
-        //   .then((resp) => console.log(resp))
-    </script>
 </body>
+
 </html>
