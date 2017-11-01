@@ -24,7 +24,7 @@ app.use(route.get(
   async (ctx) => {
     const file = await readFile(path.join(__dirname, 'index.html'), { encoding: 'UTF-8' })
 
-    ctx.body = file
+    ctx.body = file.replace('<!-- FUNDS -->', ctx.session.funds || 0)
 
     ctx.response.headers['content-type'] = 'text/html; charset=UTF-8'
   }
